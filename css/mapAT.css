@@ -1,0 +1,62 @@
+body { 
+    margin:0; 
+    padding:0; 
+}
+
+
+.column{
+    float: left;
+    padding: 10px;
+}
+
+.copy{
+    position: relative;
+    top: 5%;
+    bottom: 5%;
+    padding-left: 5%;
+    width: 60%;
+    border-bottom: 5%;
+}
+.map{
+    position:fixed; 
+    top:0; 
+    bottom:0;
+    right: 0;
+    width: 33%;
+    padding: 0;
+}
+
+
+.container {
+    zoom: 1; /* IE6&7 */
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 600px){
+    .container{
+        width: 100%;
+    }
+    .copy{
+        z-index: 0;
+        width: 90%;
+        background-color: rgba(226, 222, 222, 0.4);
+        top: 5%;
+        bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .map{
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+    }
+ 
+}
+
+    
