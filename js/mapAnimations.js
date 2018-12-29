@@ -6,9 +6,24 @@ document.addEventListener("DOMContentLoaded", function(event){
     center: [-73.924021, 38.221375],
     zoom: 3
     }); 
-
-    map.addSource('ATCenterline', {
-        type: 'geojson',
-        data: './at_centerline.geojson'
+    map.on('load', function(){
+        map.addSource('ATCenterline', {
+            type: 'geojson',
+            data: 'https://github.com/aaronbrezel/Appalachian-Trail-Map/blob/master/at_centerline.geojson'
+        });
+        map.addLayer({
+            'id': 'ATCenterline',
+            'type': 'line',
+            'source': 'ATCenterline',
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            'paint':{
+                'line-color': '#f21818',
+                'line-width': 2
+            }
+        });
     });
+   
 })
