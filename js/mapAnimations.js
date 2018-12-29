@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     map.addSource('ATCenterline', {
         type: 'geojson',
-        data: 'https://github.com/aaronbrezel/Appalachian-Trail-Map/blob/master/at_centerline.geojson'
+        data: './at_centerline.geojson'
     });
 })
