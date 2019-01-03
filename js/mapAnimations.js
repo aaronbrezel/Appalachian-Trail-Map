@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     map.on('load', function(){
         map.addSource('ATCenterline', {
             type: 'geojson',
-            data: 'https://github.com/aaronbrezel/Appalachian-Trail-Map/blob/master/at_centerline.geojson'
+            data: at_centerline
         });
         map.addLayer({
             'id': 'ATCenterline',
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event){
             },
             'paint':{
                 'line-color': '#f21818',
-                'line-width': 2
+                'line-width': 1
             }
         });
     });
