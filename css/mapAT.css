@@ -1,6 +1,8 @@
 body { 
     margin:0; 
     padding:0; 
+    background-color: black;
+    color: white;
 }
 
 
@@ -9,6 +11,7 @@ body {
     padding: 10px;
 }
 
+
 .copy{
     position: relative;
     top: 5%;
@@ -16,6 +19,7 @@ body {
     padding-left: 5%;
     width: 60%;
     border-bottom: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .map{
     position:fixed; 
@@ -25,7 +29,6 @@ body {
     width: 33%;
     padding: 0;
 }
-
 
 .container {
     zoom: 1; /* IE6&7 */
@@ -50,6 +53,12 @@ body {
         bottom: 5%;
         padding-left: 5%;
         padding-right: 5%;
+        color: black;
+       /* text-shadow:
+            -0.1px -0.1px white,
+            0.1px -0.1px white,
+            -0.1px 0.1px white,
+            0.1px 0.1px white */
     }
     .map{
         position: fixed;
