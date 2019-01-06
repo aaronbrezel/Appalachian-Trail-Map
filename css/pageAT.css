@@ -1,0 +1,74 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+body { 
+    background-color: black;
+    color: white;
+}
+
+/*CSS for parent div for both fade-ins*/
+
+.fadeCenter {
+    height: 200vh;
+    position: relative;
+}
+
+/*CSS for headline*/
+
+#headline {
+    top: 30%;
+    width: 70%;
+    left: 15%;
+    position: fixed;
+    text-align: center;
+    opacity: 0;
+}
+
+#headlineScene1 {
+    position: absolute;
+    top: 40%;
+}
+
+#headlineScene2 {
+    position: absolute;
+    top: 80%;
+}
+
+#headlineScene2 {
+
+}
+/*CSS for first paragraph*/
+
+#firstGraf {
+    width: 70%;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/*CSS for main copy*/
+.mainCopyContainer {
+    position: relative;
+}
+
+
+
+.katSign{
+    text-align:center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+
+}

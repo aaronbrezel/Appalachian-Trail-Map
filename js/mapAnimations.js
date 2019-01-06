@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
-    center: [-73.924021, 38.221375],
-    zoom: 3
+    center: [-76.524021, 39.221375],
+    zoom: 4
     }); 
     map.on('load', function(){
         map.addSource('ATCenterline', {

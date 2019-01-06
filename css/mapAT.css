@@ -4,7 +4,9 @@ body {
     background-color: black;
     color: white;
 }
-
+#headline{
+    opacity: 0;
+}
 
 .column{
     float: left;
@@ -21,6 +23,7 @@ body {
     border-bottom: 5%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .map{
     position:fixed; 
     top:0; 
@@ -40,7 +43,7 @@ body {
     clear: both;
 }
 
-
+/*Mobile resizing*/
 @media screen and (max-width: 600px){
     .container{
         width: 100%;
