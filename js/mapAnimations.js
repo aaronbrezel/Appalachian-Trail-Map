@@ -6,21 +6,6 @@ var geojson = {
     ]
 };
 
-//Scroll percentage function taken (with much gratitude) from https://stackoverflow.com/questions/2387136/cross-browser-method-to-determine-vertical-scroll-percentage-in-javascript/9348993
-$(window).on('scroll', function(){
-    var s = $(window).scrollTop(),
-        d = $(document).height(),
-        c = $(window).height();
-  
-    var scrollPercent = (s / (d - c)) * 100;
-    
-    var at_progress = (scrollPercent/86.82767564293172) * 100;
-    if (at_progress > 100){
-        at_progress = 100;
-    }
-    console.clear();
-    console.log(at_progress);
-  })
 
 
 
@@ -30,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
-    center: [-76.524021, 39.221375],
-    zoom: 4
+    center: [-79.019196, 37.838640],
+    zoom: 6.49
     }); 
     map.on('load', function(){
         map.addSource('ATCenterline', {
