@@ -8,10 +8,7 @@ body {
 }
 
 #map {
-    height:100vh;
-    width: 100%;
-    z-index: -1; 
-    position: absolute;
+    background-size: 100%;
 }
 
 /*CSS for parent div for both fade-ins*/
@@ -59,7 +56,6 @@ body {
     margin-top: 15%;
     text-align: center;
     opacity: 0.0;
-    z-index: 1;
 }
 
 #firstGrafScene1 {
