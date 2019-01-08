@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Test page</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+  <!--jquery import-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!--GreenSock Animation Platform javaScript-->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+  <!--AT Centerline data import-->
+  <script src='./js/at_centerline.js'></script>
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+
+    <div id="firstGraf">
+        <h4>Somewhere in Southern Virginia, Ken Hall was starving. Lighterknot, as he was known, was desperately eyeing the Snickers Bar he needed to save for tomorrow. For weeks, he had subsisted primarily on shelf-stable packets of tuna and peanut butter. It was not enough. He had dropped nearly 50 pounds from his formerly soft 6&rsquo;4&rsquo;&rsquo; frame. Lack of rain had made fresh water uncomfortably scarce. Finally, recent warm weather had brought out hordes of mosquitoes and biting chiggers. Despite all this, Lighterknot had to move quickly. There was still a lot of trail left&mdash;over sixteen-hundred miles North before he could summit Katahdin. The approach to the mountain would close in four and half months.</h4>
+        <div id='map'></div>    
+    </div>
+
+<script>
+ mapboxgl.accessToken = 'pk.eyJ1IjoiYWFyb25icmV6ZWwiLCJhIjoiY2pwNXNyb3IxMDJwZTNxbzZ4M3IxdGp5ZCJ9.1_DVjqU_cgiK9gt-LGf3DA';
+    const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
+    center: [-79.019196, 37.838640],
+    zoom: 6.49
+    }); 
+    map.on('load', function(){
+        map.addSource('ATCenterline', {
+            type: 'geojson',
+            data: at_centerline
+        });
+        map.addLayer({
+            'id': 'ATCenterline',   
+            'type': 'line',
+            'source': 'ATCenterline',
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            'paint':{
+                'line-color': '#f21818',
+                'line-width': 1
+            }
+        });
+    });
+$(window).on('scroll', function(){
+    TweenMax.to("#map", 4, {width: 50%});
+});
+</script>
+
+</body>
+</html>

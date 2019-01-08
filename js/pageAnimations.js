@@ -22,6 +22,9 @@ function firstGrafFadeIn (){
         TweenMax.to("#firstGraf", 5, {
             opacity: 1
         })
+        TweenMax.to("#map", 5, {
+            opacity: 1
+        })
 
 }  
 
