@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
-    center: [-79.019196, 37.838640],
+    center: [-79.619196, 37.838640],
     zoom: 6.49
     }); 
     map.on('load', function(){
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event){
             type: 'geojson',
             data: at_centerline
         });
+        /* removing at line for now
         map.addLayer({
             'id': 'ATCenterline',
             'type': 'line',
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event){
                 'line-width': 1
             }
         });
+        */
     });
    
 })
