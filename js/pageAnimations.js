@@ -31,32 +31,55 @@ $(window).on('scroll', function(){
     //console.log(scrollPercent);
     //If the page loads at the top, then the initial fade-in animation is run
     //if (scrollPercent == 0){
-        var headline = document.getElementById('headline');
-        var firstGraf = document.getElementById('firstGraf');
-        var map = document.getElementById('map');
-        var headlineTimeline = new TimelineMax({onComplete: begin});
-        headlineTimeline.to(headline, 2, { opacity: 1 })
-        .to(headline, 1, { opacity: 1 })
-        .to(headline, 1, { opacity: 1 })
-        .to(headline, 2, { opacity: 0 })
-        .to(map, 2, { opacity: 1 })
-        .to(map, 2, { opacity: 1 })
-        .to(firstGraf, 2.5, { opacity: 1 })
-        .to(firstGraf, 10, { });
+    
+
+    //*********************************************************
+    //Create Skip button to go straight to the article
+    //*********************************************************
+    var skipButton = document.createElement("button");
+    var skip = document.createTextNode("Skip");
+    skipButton.appendChild(skip);
+    skipButton.className = "btn btn-scondary btn-lg";
+    skipButton.setAttribute("id", "skipButton");
+    skipButton.id = "skipButton"
+    document.body.appendChild(skipButton);
+
+
+    //***********************************************************
+    //Initial load animation, fade-in's, etc. On complete, the
+    //begin button is made with "begin()" function
+    //***********************************************************
+    var headline = document.getElementById('headline');
+    var firstGraf = document.getElementById('firstGraf');
+    var map = document.getElementById('map');
+    var headlineTimeline = new TimelineMax({onComplete: begin});
+    headlineTimeline.to(headline, 2, { opacity: 1 })
+    .to(headline, 1, { opacity: 1 })
+    .to(headline, 1, { opacity: 1 })
+    .to(headline, 2, { opacity: 0 })
+    .to(map, 2, { opacity: 1 })
+    .to(map, 2, { opacity: 1 })
+    .to(firstGraf, 2.5, { opacity: 1 })
+    .to(firstGraf, 10, { });
     //}
     
 
 });
 
+//*********************************************************
+//Begin() creates begin button from scratch and fades it in
+//*********************************************************
+
 function begin() {
     console.log("Begin");
+    
     var beginButton = document.createElement("button");
     var begin = document.createTextNode("Begin");
     beginButton.appendChild(begin);
     beginButton.className = "btn btn-secondary btn-lg";
-    document.body.appendChild(beginButton);
     beginButton.id = "beginButton"
-    beginButton = document.getElementById("beginButton")
+    document.body.appendChild(beginButton); //actually adds the begin button element to the body so it is visible
+    //fades in the button in
     TweenMax.to(beginButton, 3, { opacity: 1 });
     beginButton.addEventListener("click", openwide);
     
@@ -64,7 +87,13 @@ function begin() {
 
 function openwide(){
     console.log("open wide");
+    document.body.removeChild(skipButton); //removes skip button 
     TweenMax.to(map, 0.5, { xpercent: 50})
+
+}
+
+function skiptoMain(){
+    //Run when Skip button is pressed, go straight to the copy of the article
 }
 
 

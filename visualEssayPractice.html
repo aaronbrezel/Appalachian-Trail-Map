@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8' />
     <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <!--Bootstrap CSS 4.2.1-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Mapbox javaScript and css import-->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'>  </script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
@@ -23,8 +25,11 @@
     <script src='./js/at_centerline.js'></script>
     <link type="text/css" rel="stylesheet" href="css/pageAT.css"/>
     <!-- <link type="text/css" rel="stylesheet" href="css/mapAT.css"/>-->
+
+
 </head>
 <body>
+    <div class="container-fluid"></div>
     <div id='map'></div>
         <div id="headline">
             <h1>Tougher than a Lighterknot</h1>

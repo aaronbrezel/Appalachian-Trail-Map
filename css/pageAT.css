@@ -19,11 +19,15 @@ body {
 }
 
 
-.btn {
+#beginButton {
   margin: auto;
   display: block;
   opacity: 0;
   margin-top: 5%;
+}
+
+#skipButton {
+    position: absolute;
 }
 
     /*CSS for headline*/
