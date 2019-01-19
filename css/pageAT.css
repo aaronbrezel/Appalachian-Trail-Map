@@ -28,6 +28,9 @@ body {
 
 #skipButton {
     position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2%;
 }
 
     /*CSS for headline*/
@@ -90,6 +93,7 @@ body {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) { 
+
 
 }
 

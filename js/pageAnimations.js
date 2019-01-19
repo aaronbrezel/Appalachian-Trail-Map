@@ -39,7 +39,7 @@ $(window).on('scroll', function(){
     var skipButton = document.createElement("button");
     var skip = document.createTextNode("Skip");
     skipButton.appendChild(skip);
-    skipButton.className = "btn btn-scondary btn-lg";
+    skipButton.className = "btn btn-secondary btn-lg";
     skipButton.setAttribute("id", "skipButton");
     skipButton.id = "skipButton"
     document.body.appendChild(skipButton);
