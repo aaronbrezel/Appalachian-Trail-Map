@@ -43,6 +43,7 @@ $(window).on('scroll', function(){
     skipButton.setAttribute("id", "skipButton");
     skipButton.id = "skipButton"
     document.body.appendChild(skipButton);
+    skipButton.addEventListener("click", skiptoMain);
 
 
     //***********************************************************
@@ -51,7 +52,6 @@ $(window).on('scroll', function(){
     //***********************************************************
     var headline = document.getElementById('headline');
     var firstGraf = document.getElementById('firstGraf');
-    var map = document.getElementById('map');
     var headlineTimeline = new TimelineMax({onComplete: begin});
     headlineTimeline.to(headline, 2, { opacity: 1 })
     .to(headline, 1, { opacity: 1 })
@@ -88,12 +88,17 @@ function begin() {
 function openwide(){
     console.log("open wide");
     document.body.removeChild(skipButton); //removes skip button 
-    TweenMax.to(map, 0.5, { xpercent: 50})
-
+    document.body.removeChild(beginButton); //removes begin button
+    var openWideTimeline = new TimelineMax();
+    openWideTimeline.to(map, 2, { width: "33%", right: 0 });
+    //reorientate the map for the whole AT
+    console.log(map)
+   flytoAT();
 }
 
 function skiptoMain(){
     //Run when Skip button is pressed, go straight to the copy of the article
+   // headlineTimeline.timeScale(2);
 }
 
 
