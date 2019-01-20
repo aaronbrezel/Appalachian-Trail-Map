@@ -7,17 +7,20 @@ var geojson = {
 };
 
 
+var mapManip
 
 
 document.addEventListener("DOMContentLoaded", function(event){
     console.log(at_centerline["features"][0])
     mapboxgl.accessToken = 'pk.eyJ1IjoiYWFyb25icmV6ZWwiLCJhIjoiY2pwNXNyb3IxMDJwZTNxbzZ4M3IxdGp5ZCJ9.1_DVjqU_cgiK9gt-LGf3DA';
-    const map = new mapboxgl.Map({
+    var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
     center: [-79.619196, 37.838640],
-    zoom: 6.49
+    zoom: 6.49,
+    interactive: false
     }); 
+    mapManip = map
    
     map.on('load', function(){
         map.addSource('ATCenterline', {
@@ -25,21 +28,9 @@ document.addEventListener("DOMContentLoaded", function(event){
             data: at_centerline
         });
         
-        /* removing at line for now
-        map.addLayer({
-            'id': 'ATCenterline',
-            'type': 'line',
-            'source': 'ATCenterline',
-            'layout': {
-                'line-join': 'round',
-                'line-cap': 'round'
-            },
-            'paint':{
-                'line-color': '#f21818',
-                'line-width': 1
-            }
-        });
-        */
+        
+       
+        
        
     });
     
@@ -47,18 +38,24 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 
 function flytoAT (){
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWFyb25icmV6ZWwiLCJhIjoiY2pwNXNyb3IxMDJwZTNxbzZ4M3IxdGp5ZCJ9.1_DVjqU_cgiK9gt-LGf3DA';
-    const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/aaronbrezel/cjq5owl4k9jxm2srqcd1ngint',
-    center: [-79.619196, 37.838640],
-    zoom: 6.49
-    }); 
-    map.flyTo({
-        center: [-63.544710, 38.672591],
+    mapManip.flyTo({
+        center: [-54.544710, 38.672591],
         zoom: 4.02,
         bearing: 0,
-        speed: 1,
-        curve: 0.3
+        speed: 0.5,
+        curve: 0.8
+    });
+    mapManip.addLayer({
+        'id': 'ATCenterline',
+        'type': 'line',
+        'source': 'ATCenterline',
+        'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+        },
+        'paint':{
+            'line-color': '#f21818',
+            'line-width': 1
+        }
     });
 }

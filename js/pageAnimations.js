@@ -89,11 +89,22 @@ function openwide(){
     console.log("open wide");
     document.body.removeChild(skipButton); //removes skip button 
     document.body.removeChild(beginButton); //removes begin button
+    //restyling headline
+    headline.style.position = "absolute";
+    headline.style.top = "0%";
+    headline.style.left = "0%";
+    headline.style.textAlign = "left";
+    headline.style.padding = "2%";
+
+    //animation after beginButton is pressed
     var openWideTimeline = new TimelineMax();
-    openWideTimeline.to(map, 2, { width: "33%", right: 0 });
+    openWideTimeline.to(map, 3, { width: "33%", right: 0 })
+    openWideTimeline.to(firstGraf, 3, { width: "66%", left: 0}, "-=3")
+    openWideTimeline.to(headline, 1, { opacity: 1})
     //reorientate the map for the whole AT
     console.log(map)
-   flytoAT();
+    flytoAT();
+
 }
 
 function skiptoMain(){
