@@ -42,21 +42,9 @@ body {
     position: fixed;
     text-align: center;
     opacity: 0;
-    /*background-color: aqua;*/
+
 }
 
-
-/*
-#headlineScene1 {
-    position: relative;
-    top: 33.5%;
-}
-
-#headlineScene2 {
-    position: relative;
-    top: 50%;
-}
-*/
 
 /*CSS for first paragraph*/
 
@@ -72,16 +60,15 @@ body {
 
 #firstParagraph {
     z-index: 2;
+    font-size: 1.5rem;
+    font-weight: 600;
+
 }
 
-#firstGrafScene1 {
-    position: absolute;
-    top: 50;
-}
 
 /*CSS for main copy*/
-.mainCopyContainer {
-    position: relative;
+#mainCopy {
+    opacity: 0;
 }
 
 
