@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 $(window).resize(function(){
     console.log("resize");
+    
     mapManip.resize();
 });
 
