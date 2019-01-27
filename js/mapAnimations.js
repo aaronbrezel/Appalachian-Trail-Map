@@ -38,8 +38,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 $(window).resize(function(){
     console.log("resize");
-    
-    mapManip.resize();
+    mapManip.flyTo({
+        center: [-70.544710, 38.672591],
+        zoom: 4.02,
+        bearing: 0,
+        speed: 0.5,
+        curve: 0.8
+    });    
 });
 
 function flytoAT (){
