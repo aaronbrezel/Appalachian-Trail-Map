@@ -105,16 +105,17 @@ function openwide(){
     if (typeof beginButton != "undefined"){ //checks if the begin button even exists
         document.body.removeChild(beginButton); //removes begin button
     } 
-    
+    restyleHeadline();
     
     //animation after beginButton is pressed
     var openWideTimeline = new TimelineMax();
     openWideTimeline.to(map, 3, { width: "33%", right: 0, position: "fixed", ease: Power3.easeOut})
+    //.add(restyleHeadline)
     .to(firstGraf, 3, { width: "66%", left: "5px", top: "10%", margin: 0, padding: "3%", ease: Power3.easeOut}, "-=3")
-    .to($("#firstParagraph"), 3, {fontSize: "1rem"}, "-=3")
+    .to($("#firstParagraph"), 3, {fontSize: "1rem", textAlign: "left"}, "-=3")
     .add(addCopy)
     .add(function(){TweenMax.to($("#mainCopy"), 3, { opacity: 1})})
-    .add(restyleHeadline)
+    
     .to(headline, 5, { opacity: 1})
     
     //reorientate the map for the whole AT
@@ -131,9 +132,18 @@ function skiptoMain(){
     }
     var skipTimeline = new TimelineMax();
     skipTimeline.to(document.body, 1, {opacity: 0})
-    .to(map, 0, { width: "33%", right: 0, position: "fixed" })
-    .to(firstGraf, 0, { width: "66%", left: "5px", top: "10%", margin: 0, padding: "3%"})
-    .to($("#firstParagraph"), 0, {fontSize: "1rem"})
+    if (window.innerWidth > 875){ //checks if window is under a certain size
+        skipTimeline.to(map, 0, { width: "33%", right: 0, position: "fixed" })
+        .to(firstGraf, 0, { width: "66%", left: "5px", top: "10%", margin: 0, padding: "3%"})
+        
+    }
+    else{ //if it is, then stack text on top of map.
+        skipTimeline.to(map, 0, { width: "100%", position: "fixed"})
+        .to($("#text"), 0, { position: "relative"})
+        .to(firstGraf, 0, { width: "100%", float: "left", margin: "0"})
+        .to(headline, 0, { width: "100%", textAlign: "center", backgroundColor: "rgb(255,255,255,0.4", float: "left"})
+    }
+    skipTimeline.to($("#firstParagraph"), 0, {fontSize: "1rem", textAlign: "left"})
     .add(addCopy)
     .add(function(){TweenMax.to($("#mainCopy"), 3, { opacity: 1})})
     .add(restyleHeadline)
@@ -152,13 +162,16 @@ function addCopy(){
 
 function restyleHeadline(){
     //restyling headline
-    headline.style.position = "absolute";
+    headline.style.position = "relative";
     headline.style.top = "0%";
     headline.style.left = "0%";
     headline.style.width = "66%";
     headline.style.textAlign = "left";
     headline.style.padding = "2%";
     headline.style.paddingLeft = "3%";
+    headline.style.paddingBottom = "1%";
+    headline.style.display = "block";
+    headline.style.clear = "both";
 }
 
 
