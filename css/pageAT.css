@@ -25,7 +25,7 @@ p {
 
 #beginButton {
   margin: auto;
-  display: block;
+  display: block;  
   opacity: 0;
   margin-top: 5%;
 }
