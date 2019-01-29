@@ -32,6 +32,9 @@ $(window).on('scroll', function(){
     //console.log(scrollPercent);
     //If the page loads at the top, then the initial fade-in animation is run
     //if (scrollPercent == 0){
+        var headline = document.getElementById('headline');
+        var firstGraf = document.getElementById('firstGraf');
+        
     
 
 
@@ -54,8 +57,6 @@ $(window).on('scroll', function(){
         //Initial load animation, fade-in's, etc. On complete, the
         //begin button is made with "begin()" function
         //***********************************************************
-        var headline = document.getElementById('headline');
-        var firstGraf = document.getElementById('firstGraf');
         
         headlineTimeline.to(headline, 2, { opacity: 1 })
         .to(headline, 0.5, { opacity: 1 })
@@ -141,7 +142,6 @@ function skiptoMain(){
         skipTimeline.to(map, 0, { width: "100%", position: "fixed"})
         .to($("#text"), 0, { position: "relative"})
         .to(firstGraf, 0, { width: "100%", float: "left", margin: "0"})
-        .to(headline, 0, { width: "100%", textAlign: "center", backgroundColor: "rgb(255,255,255,0.4", float: "left"})
     }
     skipTimeline.to($("#firstParagraph"), 0, {fontSize: "1rem", textAlign: "left"})
     .add(addCopy)
@@ -172,6 +172,12 @@ function restyleHeadline(){
     headline.style.paddingBottom = "1%";
     headline.style.display = "block";
     headline.style.clear = "both";
+    if(window.innerWidth <= 875){
+        headline.style.backgroundColor = "rgb(255,255,255,0.4)"
+        headline.style.width = "100%"
+        headline.style.paddingLeft = "15%"
+
+    }
 }
 
 
