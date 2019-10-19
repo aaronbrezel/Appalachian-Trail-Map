@@ -12,7 +12,9 @@ Here, you can see what the opening card of the webpage:
 
 ![intro card](at-map-intro.JPG)
 
+After readers hit "Begin" or "Skip", the text and map image seperate and readers can read the full story with a map of the Appalachian Trail on the right.
 
+![reading_card](reading_page.JPG)
 
 ## Resources
 
